@@ -72,7 +72,7 @@ docker run --rm --platform=linux/amd64 \
   -w /app \
   -u "$(id -u):$(id -g)" \
   debian:stable-slim \
-  /app/relog-linux-x86_64 /app/samples/buffer_backpressure.rl --log debug --delay 500
+  /app/relog-linux-x86_64 /app/samples/net_only/buffer_backpressure.rl --log debug --delay 500
 ```
 
 ### Windows (PowerShell)
@@ -86,7 +86,7 @@ docker run --rm --platform=linux/amd64 `
   -v "${PWD}:/app:ro" `
   -w /app `
   debian:stable-slim `
-  /app/relog-linux-x86_64 /app/samples/buffer_backpressure.rl --log debug --delay 500
+  /app/relog-linux-x86_64 /app/samples/net_only/buffer_backpressure.rl --log debug --delay 500
 ```
 
 > Notes:
