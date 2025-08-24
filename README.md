@@ -164,7 +164,6 @@ init {
 
 ## License
 
-See **LICENSE.md**.
 You may run the binary for any purpose, including commercial, and even host services on top of it — **but do not redistribute the binary**. Details inside the license.
 
 ## Contact
