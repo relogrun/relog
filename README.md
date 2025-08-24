@@ -24,7 +24,7 @@ cd relog-*
 chmod +x ./relog-macos-universal
 
 # run a sample
-./relog-macos-universal ./samples/buffer_backpressure.rl --log debug --delay 500
+./relog-macos-universal ./samples/net_only/buffer_backpressure.rl --log debug --delay 500
 ```
 
 > If macOS shows a quarantine warning:
@@ -38,7 +38,7 @@ cd relog-*
 chmod +x ./relog-linux-x86_64
 
 # run a sample
-./relog-linux-x86_64 ./samples/buffer_backpressure.rl --log debug --delay 500
+./relog-linux-x86_64 ./samples/net_only/buffer_backpressure.rl --log debug --delay 500
 ```
 
 ### Windows (x86\_64)
@@ -48,7 +48,7 @@ Expand-Archive .\relog-windows-x86_64.zip -DestinationPath .\relog
 cd .\relog
 
 # run a sample
-.\relog-windows-x86_64.exe .\samples\buffer_backpressure.rl --log debug --delay 500
+.\relog-windows-x86_64.exe .\samples\net_only\buffer_backpressure.rl --log debug --delay 500
 ```
 
 > If SmartScreen warns about an unknown publisher, choose “More info” → “Run anyway”.
@@ -111,13 +111,13 @@ Examples:
 
 ```bash
 # minimal
-./relog-… ./samples/simple.rl
+./relog-… ./samples/net_only/simple.rl
 
 # verbose tracing
-./relog-… ./samples/buffer_backpressure.rl --log debug
+./relog-… ./samples/net_only/buffer_backpressure.rl --log debug
 
 # throttle steps to 2/s
-./relog-… ./samples/buffer_backpressure.rl --delay 500
+./relog-… ./samples/net_only/buffer_backpressure.rl --delay 500
 ```
 
 Show built-in help & version:
