@@ -135,25 +135,36 @@ A program declares **stores**, **transitions** (with input/output arcs), and **i
 
 ```relog
 // Stores
-store buf
+store produced
 store free
+store buf
+store done
 
-// Transition
+// Move one produced item into the buffer, consuming one slot.
 transition push {
-  in  free(slot) * 2        
-  out buf(item(42)) *2     
+  in  produced(item(let x))
+  in  free(slot)
+  out buf(item(let x))
+}
+
+// Take TWO equal items from the buffer at once, return two slots.
+transition pop_pair {
+  in  buf(item(let y)) * 2
+  out done(pair(let y, let y))
+  out free(slot) * 2
 }
 
 init {
-  free slot * 2              
-  buf item(1)              
+  produced item(hello)
+  produced item(world) * 2 // enables pop_pair once for "world"
+  free slot * 2
 }
 ```
 
-* Variables: `let x`
-* Literals: strings `"hello world"` or `hello`, numbers `123`, identifiers `ok`
-* Applications: `foo(bar, baz)`
-* Multiplicity: `* N` (e.g., `free(let _) * 3`)
+* **Variables:** `let x` (no `_` wildcard). Reusing a var enforces equality, e.g. `pair(let x, let x)`.
+* **Literals:** identifiers (`hello`), strings (`"hello world"`), numbers (`123`).
+* **Applications:** n-ary terms, e.g. `foo(bar, baz)`.
+* **Multiplicity:** `* N`. Inputs need **N distinct** matching tokens. Examples: `in buffer(let x) * 3`, `init { free slot * 3 }`.
 
 ---
 
