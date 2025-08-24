@@ -52,7 +52,6 @@ cd .\relog
 
 > If SmartScreen warns about an unknown publisher, choose “More info” → “Run anyway”.
 
-
 ---
 
 ## Run via Docker (read-only sandbox)
@@ -163,16 +162,12 @@ init {
 * **Quarantine (macOS)** → `xattr -dr com.apple.quarantine ./relog-macos-universal`
 * **Weird path issues on Windows** → wrap paths with spaces in quotes
 
----
-
 ## License
 
 See **LICENSE.md**.
 You may run the binary for any purpose, including commercial, and even host services on top of it — **but do not redistribute the binary**. Details inside the license.
 
----
-
 ## Contact
 
-**[q@relog.run](mailto:q@relog.run)**.
+**[q@relog.run](mailto:q@relog.run)**
 
