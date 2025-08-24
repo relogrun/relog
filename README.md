@@ -1,6 +1,7 @@
 # Relog (CLI Preview)
 
- **Toy, no-I/O runner** for a tiny Relog DSL and **algebraic** token networks.  
+**Toy, no-I/O runner** for a tiny DSL for **algebraic token networks**.
+
 No persistence, no files, no sockets — just load a .rl and run it locally.
 
 ## Downloads
