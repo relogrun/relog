@@ -114,18 +114,6 @@ init {
 
 ---
 
-## Verifying checksums (optional)
-
-* **macOS**: `shasum -a 256 -c checksums.txt`
-* **Linux**: `sha256sum -c checksums.txt`
-* **Windows (PowerShell)**:
-
-  ```powershell
-  Get-FileHash .\relog-windows-x86_64.zip -Algorithm SHA256
-  ```
-
----
-
 ## Troubleshooting
 
 * **Permission denied** → `chmod +x ./relog-…` (macOS/Linux)
