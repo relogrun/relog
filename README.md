@@ -41,9 +41,9 @@ init {
 * **Multiplicity:** `* N`. Inputs need **N distinct** matching tokens. Examples: `in buffer(let x) * 3`, `init { free slot * 3 }`.
 * **Configs**: set directly in the DSL (net/runtime/store/transition).
 
-Full DSL reference: [see DSL.md](./DSL.md).
+Full DSL reference: [see DSL.md](./DSL.md)
 
-Samples: see [samples/](./samples).
+Samples: see [samples/](./samples)
 
 ---
 
@@ -167,15 +167,6 @@ Show built-in help & version:
 relog --help
 relog --version
 ```
-
-## Samples
-
-Ready-to-run programs live in [samples/](./samples).
-
-Run any sample:
-```bash
-# generic template
-./relog-… ./samples/<subdir>/<file>.rl [--log debug] [--delay 500]
 
 ---
 
