@@ -4,7 +4,7 @@
 
 No persistence, no files, no sockets — just load a .rl and run it locally.
 
-## The DSL (tiny overview)
+## DSL (tiny overview)
 
 A program declares **stores**, **transitions** (with input/output arcs), and **initial tokens**:
 
