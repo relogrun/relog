@@ -94,8 +94,6 @@ cd .\relog
 
 > If SmartScreen warns about an unknown publisher, choose “More info” → “Run anyway”.
 
----
-
 ## Run via Docker (read-only sandbox)
 
 Don’t want to run a local binary? Use a locked-down Linux container.
@@ -141,25 +139,38 @@ docker run --rm --platform=linux/amd64 `
 ## Usage
 
 ```
-relog <path-to-file.rl> [--log <level>] [--delay <ms>]
-```
 
-* `--log`: `off | error | warn | info | debug` (default: `info`)
-* `--delay <ms>`: optional pause **between successful ticks** in natural mode (e.g. `--delay 1000` = 1s).
-  No initial delay before the first step.
+relog \<path-to-file.rl> \[options]
+
+````
+
+**Options**
+
+| Flag | Meaning | Default |
+|---|---|---|
+| `--log <level>` | Log level: `off` \| `error` \| `warn` \| `info` \| `debug` | `info` |
+| `--runtime <mode>` | Runtime override: `natural` \| `reactive` | `natural` |
+| `--max-ticks <N>` | Stop after N ticks (both runtimes) | unlimited |
+| `--delay <MS>` | Visual delay **between successful ticks** in ms | none |
+
+Notes:
+- `<path-to-file.rl>` must be a **file**, not a directory.
+- Graceful shutdown: press **Ctrl-C**. On Unix, `SIGINT`/`SIGTERM`/`SIGQUIT` are handled.
 
 Examples:
-
 ```bash
 # minimal
-./relog-… ./samples/net_only/simple.rl
+relog ./samples/net_only/simple.rl
 
 # verbose tracing
-./relog-… ./samples/net_only/buffer_backpressure.rl --log debug
+relog ./samples/net_only/buffer_backpressure.rl --log debug
 
-# throttle steps to 2/s
-./relog-… ./samples/net_only/buffer_backpressure.rl --delay 500
-```
+# throttle steps to ~2/s (natural runtime)
+relog ./samples/net_only/buffer_backpressure.rl --delay 500
+
+# reactive runtime with a hard cap on ticks
+relog ./samples/net_only/stream.rl --runtime reactive --max-ticks 1000
+````
 
 Show built-in help & version:
 
