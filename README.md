@@ -140,7 +140,7 @@ docker run --rm --platform=linux/amd64 `
 
 ```
 
-relog \<path-to-file.rl> \[options]
+./relog <path-to-file.rl> [options]
 
 ````
 
@@ -160,23 +160,23 @@ Notes:
 Examples:
 ```bash
 # minimal
-relog ./samples/net_only/simple.rl
+./relog-… ./samples/net_only/simple.rl
 
 # verbose tracing
-relog ./samples/net_only/buffer_backpressure.rl --log debug
+./relog-… ./samples/net_only/buffer_backpressure.rl --log debug
 
 # throttle steps to ~2/s (natural runtime)
-relog ./samples/net_only/buffer_backpressure.rl --delay 500
+./relog-… ./samples/net_only/buffer_backpressure.rl --delay 500
 
 # reactive runtime with a hard cap on ticks
-relog ./samples/net_only/stream.rl --runtime reactive --max-ticks 1000
+./relog-… ./samples/net_only/stream.rl --runtime reactive --max-ticks 1000
 ````
 
 Show built-in help & version:
 
 ```bash
-relog --help
-relog --version
+./relog-… --help
+./relog-… --version
 ```
 
 ---
