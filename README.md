@@ -155,6 +155,8 @@ docker run --rm --platform=linux/amd64 `
 
 Notes:
 - `<path-to-file.rl>` must be a **file**, not a directory.
+- **Precedence:** CLI options **override** corresponding settings declared inside the `.rl` file (e.g. runtime mode, max-ticks cap, inter-tick delay). If an option isn’t passed, the value from the DSL (or the built-in default) is used.
+- `--log` is CLI-only (not configurable from the DSL).
 - Graceful shutdown: press **Ctrl-C**. On Unix, `SIGINT`/`SIGTERM`/`SIGQUIT` are handled.
 
 Examples:
