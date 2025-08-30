@@ -191,7 +191,7 @@ Show built-in help & version:
 
 ## License
 
-You may run the binary for any purpose, including commercial, and even host services on top of it — **but do not redistribute the binary**. Details inside the license.
+You may run the binary for any purpose, including commercial, and even host services on top of it — **but do not redistribute the binary**. Details inside the [license](./LICENSE.md).
 
 ## Contact
 
