@@ -2,7 +2,7 @@
 // Any ungrounded output is an error (e.g. `out a(let z)` with `z` unbound).
 // The step aborts with: "Ungrounded term ... in store `a`".
 
-forward greedy
+forward first_fit
 
 store b
 store a

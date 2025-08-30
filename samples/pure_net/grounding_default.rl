@@ -2,7 +2,7 @@
 // Ungrounded outputs are replaced with the given constant.
 // Here `a(let z)` becomes `a(undef)`.
 
-forward greedy
+forward first_fit
 
 store b
 store a

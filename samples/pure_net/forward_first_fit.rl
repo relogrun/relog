@@ -1,9 +1,9 @@
-// Forward strategy: pure_maximal(...).
-// Chooses a truly maximal (by cardinality) non-conflicting set.
-// Here `take_a` + `take_b` (2 firings) beat the single `big` (1 firing),
-// so both small transitions fire together in one atomic step.
+// Forward strategy: first_fit.
+// Competing transitions share the same tokens. Takes a single
+// highest-priority compatible set — here the `big` transition wins,
+// so only `big` fires in one atomic step (a + b -> big_out(pair(...))).
 
-forward pure_maximal(64)
+forward first_fit
 multi_firing unlimited
 
 store a
@@ -30,7 +30,7 @@ transition take_b {
   out small_out(b_only(let y))
 }
 
-init { 
+init {
   a A
-  b B 
+  b B
 }

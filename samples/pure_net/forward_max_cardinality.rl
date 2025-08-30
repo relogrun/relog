@@ -1,9 +1,9 @@
-// Forward strategy: greedy.
-// Competing transitions share the same tokens. Greedy takes a single
-// highest-priority compatible set — here the `big` transition wins,
-// so only `big` fires in one atomic step (a + b -> big_out(pair(...))).
+// Forward strategy: max_cardinality(...).
+// Chooses a truly maximal (by cardinality) non-conflicting set.
+// Here `take_a` + `take_b` (2 firings) beat the single `big` (1 firing),
+// so both small transitions fire together in one atomic step.
 
-forward greedy
+forward max_cardinality(64)
 multi_firing unlimited
 
 store a
@@ -30,7 +30,7 @@ transition take_b {
   out small_out(b_only(let y))
 }
 
-init {
+init { 
   a A
-  b B
+  b B 
 }

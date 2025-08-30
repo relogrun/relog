@@ -2,7 +2,7 @@
 // Ungrounded outputs are silently dropped, other outputs still happen.
 // Here `a(let z)` is skipped, while `log(seen(y))` is produced and `b(y)` is consumed.
 
-forward greedy
+forward first_fit
 
 store b
 store a

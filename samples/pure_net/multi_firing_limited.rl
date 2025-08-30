@@ -3,7 +3,7 @@
 // The `drain` transition moves at most one token from `a` to `out` per step.
 // Switching to `unlimited` would drain all tokens in one step.
 
-forward greedy
+forward first_fit
 multi_firing limited(1)
 
 store a

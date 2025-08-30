@@ -2,7 +2,7 @@
 // Two transitions compete for the same `inbox(msg(x))` token.
 // The higher `priority` wins: `hi` (prio 10) fires instead of `lo` (prio 0).
 
-forward greedy
+forward first_fit
 
 store inbox
 store route

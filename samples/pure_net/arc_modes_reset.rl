@@ -3,7 +3,7 @@
 // before adding other outputs (capacity is validated on the final state).
 // `flush_all` consumes `flushed(go)`, wipes `buf`, then emits `flushed(done)`.
 
-forward greedy
+forward first_fit
 
 store buf
 store input

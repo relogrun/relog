@@ -6,7 +6,7 @@
 // Result: `running(task1)` starts; `task2` stays queued while something runs.
 
 
-forward greedy
+forward first_fit
 
 store lock
 store queue
