@@ -140,7 +140,7 @@ docker run --rm --platform=linux/amd64 `
 
 ```
 
-./relog <path-to-file.rl> [options]
+./relog-… <path-to-file.rl> [options]
 
 ````
 
