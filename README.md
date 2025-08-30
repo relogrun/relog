@@ -43,6 +43,8 @@ init {
 
 Full DSL reference: [see DSL.md](./DSL.md).
 
+Samples: see [samples/](./samples).
+
 ---
 
 ## Downloads
@@ -165,6 +167,15 @@ Show built-in help & version:
 relog --help
 relog --version
 ```
+
+## Samples
+
+Ready-to-run programs live in [samples/](./samples).
+
+Run any sample:
+```bash
+# generic template
+./relog-… ./samples/<subdir>/<file>.rl [--log debug] [--delay 500]
 
 ---
 
