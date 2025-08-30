@@ -115,7 +115,7 @@ transition goto {
     out  code(goto(let L, let N))
 }
 
-// HALT — capture final registers
+// HALT - capture final registers
 transition halt {
     in   pc(let L)
     in   code(halt(let L))

@@ -1,4 +1,3 @@
-// Stores
 store produced
 store free
 store buf
@@ -11,7 +10,7 @@ transition push {
   out buf(item(let x))
 }
 
-// Take TWO equal items from the buffer at once, return two slots.
+// Take two equal items from the buffer at once, return two slots.
 transition pop_pair {
   in  buf(item(let y)) * 2
   out done(pair(let y, let y))

@@ -1,5 +1,5 @@
 // Unification showcase: three core patterns in one miniature net.
-// Repeated variable inside a single term — forces equality of fields:
+// Repeated variable inside a single term - forces equality of fields:
 //      s(pair(x, x)) -> out(eq(x))
 // Shared variable across two inputs (equi-join):
 //      a(val(x)) & b(val(x)) -> out(join(x))
@@ -35,7 +35,7 @@ init {
   // For eq_pair:
   s pair(A, A)          // will match
   s pair(A, B)          // will NOT match
-  s triple(A, A, A)     // different functor/arity — will NOT match
+  s triple(A, A, A)     // different functor/arity - will NOT match
 
   // For join_ab:
   a val(42); b val(42)  // will match

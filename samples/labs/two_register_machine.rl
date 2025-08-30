@@ -45,7 +45,7 @@ transition inc_r2 {
   out code(inc(r2, let L, let Lnext))
 }
 
-// DECZ r1 — zero branch
+// DECZ r1 - zero branch
 transition decz_r1_zero {
   in  pc(let L)
   in  code(decz(r1, let L, let Lzero, let Lnext))
@@ -55,7 +55,7 @@ transition decz_r1_zero {
   out code(decz(r1, let L, let Lzero, let Lnext))
 }
 
-// DECZ r1 — succ branch
+// DECZ r1 - succ branch
 transition decz_r1_succ {
   in  pc(let L)
   in  code(decz(r1, let L, let Lzero, let Lnext))
@@ -65,7 +65,7 @@ transition decz_r1_succ {
   out code(decz(r1, let L, let Lzero, let Lnext))
 }
 
-// DECZ r2 — zero branch
+// DECZ r2 - zero branch
 transition decz_r2_zero {
   in  pc(let L)
   in  code(decz(r2, let L, let Lzero, let Lnext))
@@ -75,7 +75,7 @@ transition decz_r2_zero {
   out code(decz(r2, let L, let Lzero, let Lnext))
 }
 
-// DECZ r2 — succ branch
+// DECZ r2 - succ branch
 transition decz_r2_succ {
   in  pc(let L)
   in  code(decz(r2, let L, let Lzero, let Lnext))
@@ -93,7 +93,7 @@ transition goto {
   out code(goto(let L, let Lnext))
 }
 
-// HALT — capture final registers into separate stores
+// HALT - capture final registers into separate stores
 transition halt {
   in  pc(let L)
   in  code(halt(let L))

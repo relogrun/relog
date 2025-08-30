@@ -3,8 +3,8 @@
 // code(goto(from, old)) with code(goto(from, new)) — no net rebuilding needed.
 
 store pc
-store k          // countdown (Peano)
-store r2         // will be incremented K times
+store k // countdown
+store r2 // will be incremented K times
 store code
 store halted_r2
 
@@ -49,8 +49,7 @@ transition patch_goto {
   in  code(patch_goto(let Lpatch, let from, let new_to, let cont))
   in  code(goto(let from, let old))
   out pc(let cont)
-  out code(goto(let from, let new_to))               // write patched goto
-  // patch is one-shot: do NOT re-emit code(patch_goto(...))
+  out code(goto(let from, let new_to)) // write patched goto
 }
 
 // Halt (just to observe result)
@@ -78,7 +77,7 @@ init {
   code halt(Lhalt)
 
   // example: K=3, r2 starts at 2 -> final r2 = 5
-  k  succ(succ(succ(zero)))      // 3
-  r2 succ(succ(zero))            // 2
+  k  succ(succ(succ(zero))) // 3
+  r2 succ(succ(zero)) // 2
   pc L0
 }

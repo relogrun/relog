@@ -160,12 +160,13 @@ init {
   free slot * 2
 }
 ```
-
-* **Variables:** `let x` (no `_` wildcard). Reusing a var enforces equality, e.g. `pair(let x, let x)`.
+* **Variables:** `let x`. Reusing a var enforces equality, e.g. `pair(let x, let x)`.
 * **Literals:** identifiers (`hello`), strings (`"hello world"`), numbers (`123`).
 * **Applications:** n-ary terms, e.g. `foo(bar, baz)`.
 * **Multiplicity:** `* N`. Inputs need **N distinct** matching tokens. Examples: `in buffer(let x) * 3`, `init { free slot * 3 }`.
+* **Configs**: set directly in the DSL (net/runtime/store/transition).
 
+Full DSL reference: [see DSL.md](./DSL.md).
 ---
 
 ## Troubleshooting

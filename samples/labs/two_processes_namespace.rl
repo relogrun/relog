@@ -18,7 +18,7 @@ transition inc_r2 {
   out code(inc(r2, let L, let N))
 }
 
-// DECZ r1 — zero
+// DECZ r1 - zero
 transition decz_r1_zero {
   in  pc(proc(let p, let L))
   in  code(decz(r1, let L, let Z, let N))
@@ -28,7 +28,7 @@ transition decz_r1_zero {
   out code(decz(r1, let L, let Z, let N))
 }
 
-// DECZ r1 — succ
+// DECZ r1 - succ
 transition decz_r1_succ {
   in  pc(proc(let p, let L))
   in  code(decz(r1, let L, let Z, let N))
@@ -38,7 +38,7 @@ transition decz_r1_succ {
   out code(decz(r1, let L, let Z, let N))
 }
 
-// HALT — snapshot per process
+// HALT - snapshot per process
 transition halt {
   in  pc(proc(let p, let L))
   in  code(halt(let L))
@@ -55,12 +55,12 @@ init {
   code inc(r2, L1, L0)
   code halt(Lhalt)
 
-  // Process pA: r1=2, r2=5 → r2=7
+  // Process pA: r1=2, r2=5 -> r2=7
   r1 proc(pA, succ(succ(zero)))
   r2 proc(pA, succ(succ(succ(succ(succ(zero))))))
   pc proc(pA, L0)
 
-  // Process pB: r1=3, r2=1 → r2=4
+  // Process pB: r1=3, r2=1 -> r2=4
   r1 proc(pB, succ(succ(succ(zero))))
   r2 proc(pB, succ(zero))
   pc proc(pB, L0)

@@ -32,7 +32,7 @@ transition done {
 // Transition table and classes for "even number of a".
 // q0: accept, q1: reject. Start in q0.
 init {
-  // δ-transitions
+  // delta-transitions
   delta delta(q0, a, q1)
   delta delta(q0, b, q0)
   delta delta(q1, a, q0)
