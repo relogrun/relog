@@ -15,7 +15,7 @@
 
 | Arg / Flag          | Description                             | Default               |
 | ------------------- | --------------------------------------- | --------------------- |
-| `<path-to-file.rl>` | DSL file to execute (must be a file)    | —                     |
+| `<path-to-file.rl>` | DSL file to execute (must be a file)    |                       |
 | `--log <level>`     | `off`\|`error`\|`warn`\|`info`\|`debug` | `info`                |
 | `--runtime <mode>`  | Override runtime: `natural`\|`reactive` | from DSL or `natural` |
 | `--max-ticks <N>`   | Stop after N ticks                      | from DSL or unlimited |
@@ -31,9 +31,9 @@ Notes: CLI flags override corresponding values from DSL `.rl` file (except `--lo
 
 | Arg / Flag                  | Description                                                   | Default |
 | --------------------------- | ------------------------------------------------------------- | ------- |
-| `<base-path-or-file>`       | Directory to serve, or a file inside it (parent becomes base) | —       |
+| `<base-path-or-file>`       | Directory to serve, or a file inside it (parent becomes base) |         |
 | `--port <P>`                | HTTP port                                                     | `8080`  |
-| `--autostart <rel-file.rl>` | Autostart this file **relative to base**                      | —       |
+| `--autostart <rel-file.rl>` | Autostart this file **relative to base**                      |         |
 | `--log <level>`             | Log level                                                     | `info`  |
 
 ---
@@ -52,7 +52,7 @@ Base: `http://HOST:PORT/api` • WS: `ws://HOST:PORT/api`
 | POST | `/api/step` |  | `200` or `400` | Executes single manual step. |
 | POST | `/api/set_delay` | `{delay_ms}` | `200` | Sets inter-step delay. |
 | GET | `/api/status` |  | `200`, `{ "running": true \| false }` | Current run state. |
-| GET | `/api/file?path=<rel>` | — | `200`, `.rl` file (text) | Reads file inside base. |
+| GET | `/api/file?path=<rel>` |  | `200`, `.rl` file (text) | Reads file inside base. |
 | GET | `/api/files` |  | `200`, `["foo.rl","bar.rl"]` | Lists `.rl` files in base. |
 | POST | `/api/save` | `{path, content}` | `200` | Saves `.rl` **inside base**. |
 | GET | `/api/net?path=<rel>` |  | `200`, compiled `NetStateDto` | For provided path or current run if omitted. |
