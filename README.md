@@ -1,4 +1,4 @@
-# Relog (CLI Preview)
+# Relog (Preview)
 
 **Toy, no-I/O runner** for a tiny DSL for **algebraic token networks**.
 
@@ -35,11 +35,12 @@ init {
   free slot * 2
 }
 ```
-* **Variables:** `let x`. Reusing a var enforces equality, e.g. `pair(let x, let x)`.
-* **Literals:** identifiers (`hello`), strings (`"hello world"`), numbers (`123`).
-* **Applications:** n-ary terms, e.g. `foo(bar, baz)`.
-* **Multiplicity:** `* N`. Inputs need **N distinct** matching tokens. Examples: `in buffer(let x) * 3`, `init { free slot * 3 }`.
-* **Configs**: set directly in the DSL (net/runtime/store/transition).
+
+- **Variables:** `let x`. Reusing a var enforces equality, e.g. `pair(let x, let x)`.
+- **Literals:** identifiers (`hello`), strings (`"hello world"`), numbers (`123`).
+- **Applications:** n-ary terms, e.g. `foo(bar, baz)`.
+- **Multiplicity:** `* N`. Inputs need **N distinct** matching tokens. Examples: `in buffer(let x) * 3`, `init { free slot * 3 }`.
+- **Configs**: set directly in the DSL (net/runtime/store/transition).
 
 Full DSL reference: [see DSL.md](./DSL.md)
 
@@ -51,9 +52,9 @@ Samples: see [samples/](./samples)
 
 Grab the archive for your OS from [latest release](https://github.com/relogrun/relog/releases/latest):
 
-* **macOS (Universal)** — `relog-macos-universal.zip`
-* **Linux x86\_64 (musl)** — `relog-linux-x86_64.tar.gz`
-* **Windows x86\_64 (gnu)** — `relog-windows-x86_64.zip`
+- **macOS (Universal)** — `relog-macos-universal.zip`
+- **Linux x86_64 (musl)** — `relog-linux-x86_64.tar.gz`
+- **Windows x86_64 (gnu)** — `relog-windows-x86_64.zip`
 
 ## Quick Start
 
@@ -62,34 +63,36 @@ Grab the archive for your OS from [latest release](https://github.com/relogrun/r
 ```bash
 unzip relog-macos-universal.zip
 cd relog-*
-chmod +x ./relog-macos-universal
+chmod +x ./relog-cli
 
 # run a sample
-./relog-macos-universal ./samples/net_only/buffer_backpressure.rl --log debug --delay 500
+./relog-cli ./samples/pure_net/buffer_backpressure.rl --log debug --delay 500
 ```
 
 > If macOS shows a quarantine warning:
-> `xattr -dr com.apple.quarantine ./relog-macos-universal`
+> `xattr -dr com.apple.quarantine ./relog-cli`
 
-### Linux (x86\_64)
+### Linux (x86_64)
 
 ```bash
 tar -xzf relog-linux-x86_64.tar.gz
 cd relog-*
-chmod +x ./relog-linux-x86_64
+chmod +x ./relog-cli
 
 # run a sample
-./relog-linux-x86_64 ./samples/net_only/buffer_backpressure.rl --log debug --delay 500
+./relog-cli ./samples/pure_net/buffer_backpressure.rl --log debug --delay 500
 ```
 
-### Windows (x86\_64)
+For the full command reference (modes, flags, REST/WS API), see [CLI.md](./CLI.md).
+
+### Windows (x86_64)
 
 ```powershell
 Expand-Archive .\relog-windows-x86_64.zip -DestinationPath .\relog
 cd .\relog
 
 # run a sample
-.\relog-windows-x86_64.exe .\samples\net_only\buffer_backpressure.rl --log debug --delay 500
+.\relog-cli.exe .\samples\pure_net\buffer_backpressure.rl --log debug --delay 500
 ```
 
 > If SmartScreen warns about an unknown publisher, choose “More info” → “Run anyway”.
@@ -111,7 +114,7 @@ docker run --rm --platform=linux/amd64 \
   -w /app \
   -u "$(id -u):$(id -g)" \
   debian:stable-slim \
-  /app/relog-linux-x86_64 /app/samples/net_only/buffer_backpressure.rl --log debug --delay 500
+  /app/relog-cli /app/samples/pure_net/buffer_backpressure.rl --log debug --delay 500
 ```
 
 ### Windows (PowerShell)
@@ -125,69 +128,49 @@ docker run --rm --platform=linux/amd64 `
   -v "${PWD}:/app:ro" `
   -w /app `
   debian:stable-slim `
-  /app/relog-linux-x86_64 /app/samples/net_only/buffer_backpressure.rl --log debug --delay 500
+  /app/relog-cli /app/samples/pure_net/buffer_backpressure.rl --log debug --delay 500
 ```
 
 > Notes:
 >
-> * The command expects you extracted the **Linux** archive into the current directory, so `relog-linux-x86_64` and `samples/` are present under `./`.
-> * `--platform=linux/amd64` makes it work on Apple Silicon too.
-> * The container is read-only, has dropped capabilities, no network, a tmpfs `/tmp`, and (on macOS/Linux) runs as your user via `-u`.
-> 
+> - The command expects you extracted the **Linux** archive into the current directory, so `relog-cli` and `samples/` are present under `./`.
+> - `--platform=linux/amd64` makes it work on Apple Silicon too.
+> - The container is read-only, has dropped capabilities, no network, a tmpfs `/tmp`, and (on macOS/Linux) runs as your user via `-u`.
+
 ---
 
 ## Usage
 
-```
+There are two modes:
 
-./relog-… <path-to-file.rl> [options]
-
-````
-
-**Options**
-
-| Flag | Meaning | Default |
-|---|---|---|
-| `--log <level>` | Log level: `off` \| `error` \| `warn` \| `info` \| `debug` | `info` |
-| `--runtime <mode>` | Runtime override: `natural` \| `reactive` | `natural` |
-| `--max-ticks <N>` | Stop after N ticks (both runtimes) | unlimited |
-| `--delay <MS>` | Visual delay **between successful ticks** in ms | none |
-
-Notes:
-- `<path-to-file.rl>` must be a **file**, not a directory.
-- **Precedence:** CLI options **override** corresponding settings declared inside the `.rl` file (e.g. runtime mode, max-ticks cap, inter-tick delay). If an option isn’t passed, the value from the DSL (or the built-in default) is used.
-- `--log` is CLI-only (not configurable from the DSL).
-- Graceful shutdown: press **Ctrl-C**. On Unix, `SIGINT`/`SIGTERM`/`SIGQUIT` are handled.
-
-Examples:
-```bash
-# minimal
-./relog-… ./samples/net_only/simple.rl
-
-# verbose tracing
-./relog-… ./samples/net_only/buffer_backpressure.rl --log debug
-
-# throttle steps to ~2/s (natural runtime)
-./relog-… ./samples/net_only/buffer_backpressure.rl --delay 500
-
-# reactive runtime with a hard cap on ticks
-./relog-… ./samples/net_only/stream.rl --runtime reactive --max-ticks 1000
-````
-
-Show built-in help & version:
+**Direct mode (`run`)** — execute a single `.rl` locally.
 
 ```bash
-./relog-… --help
-./relog-… --version
+./relog-cli run ./samples/pure_net/buffer_backpressure.rl --log debug --delay 500
 ```
+
+**Server mode (`serve`)** — start an HTTP + WebSocket API for remote control (pass a base directory or a file inside it).
+
+```bash
+./relog-cli serve ./samples/pure_net --port 9000 --log debug
+```
+
+Help
+
+```bash
+./relog-cli run --help
+./relog-cli serve --help
+```
+
+For full details (all flags, API endpoints), see [CLI.md](./CLI.md).
 
 ---
 
 ## Troubleshooting
 
-* **Permission denied** → `chmod +x ./relog-…` (macOS/Linux)
-* **Quarantine (macOS)** → `xattr -dr com.apple.quarantine ./relog-macos-universal`
-* **Weird path issues on Windows** → wrap paths with spaces in quotes
+- **Permission denied** → `chmod +x ./relog-cli` (macOS/Linux)
+- **Quarantine (macOS)** → `xattr -dr com.apple.quarantine ./relog-cli`
+- **Weird path issues on Windows** → wrap paths with spaces in quotes
 
 ## License
 
@@ -196,4 +179,3 @@ You may run the binary for any purpose, including commercial, and even host serv
 ## Contact
 
 **[q@relog.run](mailto:q@relog.run)**
-

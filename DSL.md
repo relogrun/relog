@@ -1,3 +1,7 @@
+# Relog DSL 
+
+## Simple net
+
 ```relog
 // Net / runtime configs
 forward first_fit          // first_fit (default) | max_cardinality(N)
