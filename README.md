@@ -155,7 +155,7 @@ There are two modes:
 ./relog-cli serve ./samples/pure_net --port 9000 --log debug
 ```
 
-Help
+Help:
 
 ```bash
 ./relog-cli run --help
