@@ -1,7 +1,7 @@
 # Relog Binary License (Proprietary)
 
-License Version: 1.0 — Effective: 2025-08-24
-Applies to: Relog binary v0.1.x
+License Version: 1.1 — Effective: 2025-08-31
+Applies to: Relog binary v0.x.x
 
 Copyright 2025 RelogRun.
 All rights reserved.
