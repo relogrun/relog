@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.3.0] — 2025-08-31
+
+### Added
+
+- **New `serve` mode**: built-in HTTP + WebSocket API to run/control `.rl` files.
+
+  - WS: `/api` streams `{schema,type,payload}` (`status` | `event` | `error`).
+  - HTTP: `POST /api/start`, `/stop`, `/pause`, `/resume`, `/step`, `/set_delay`; `GET /api/status`, `/file?path=<rel>`, `/files`, `/net?path=<rel>`; `POST /api/save`.
+  - Flags: `--port <P>`, `--autostart <rel-file.rl>`, `--log <level>`.
+
+### Changed
+
+- **CLI split into subcommands**:
+
+  - `run` — execute a single `.rl` locally:
+    `relog-cli run <file.rl> [--log <level>] [--runtime {natural|reactive}] [--max-ticks N] [--delay MS]`
+  - `serve` — start the API server for a base directory or a file inside it:
+    `relog-cli serve <base-path-or-file> [--port P] [--autostart rel-file.rl] [--log <level>]`
+
+### Breaking
+
+- You must specify a subcommand (`run` or `serve`). Invoking the binary without a subcommand is no longer supported.
+
 ## [0.2.0] — 2025-08-30
 
 ### Added
