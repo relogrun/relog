@@ -45,16 +45,16 @@ Base: `http://HOST:PORT/api` • WS: `ws://HOST:PORT/api`
 | Method | Path | Body (JSON) | Returns | Notes |
 | --- | --- | --- | --- | --- |
 | WS | `/api` | — | Stream of `{schema,type,payload}` where `type`=`status`\|`event`\|`error`. | Realtime status/events/errors. |
-| POST | `/api/start` | `{file, paused?, delay_ms?, max_ticks?}` | `200` on success | `file` is path **relative to base**; starts a run. |
+| POST | `/api/start` | `{file, paused?, delay_ms?, max_ticks?}` | `200` | `file` is path **relative to base**; starts a run. |
 | POST | `/api/stop` | — | `200` | Stops current run. |
 | POST | `/api/pause` | — | `200` or `400` | Pauses run. |
 | POST | `/api/resume` | — | `200` or `400` | Resumes run. |
 | POST | `/api/step` | — | `200` or `400` | Executes single manual step. |
 | POST | `/api/set_delay` | `{delay_ms}` | `200` | Sets inter-step delay. |
-| GET | `/api/status` | — | `200`, body: `{ "running": true \| false }` | Current run state. |
-| GET | `/api/file?path=<rel>` | — | `200`, body: `.rl` file (text) | Reads file inside base. |
+| GET | `/api/status` | — | `200`, `{ "running": true \| false }` | Current run state. |
+| GET | `/api/file?path=<rel>` | — | `200`, `.rl` file (text) | Reads file inside base. |
 | GET | `/api/files` | — | `200`, body: `["foo.rl","bar.rl"]` | Lists `.rl` files in base. |
 | POST | `/api/save` | `{path, content}` | `200` | Saves `.rl` **inside base**. |
-| GET | `/api/net?path=<rel>` | — | `200`, body: compiled `NetStateDto` | For provided path or current run if omitted. |
+| GET | `/api/net?path=<rel>` | — | `200`, compiled `NetStateDto` | For provided path or current run if omitted. |
 
 **I/O note:** API operates on `.rl` files. Paths are expected to be inside the base directory (relative to base).
