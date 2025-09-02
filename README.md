@@ -178,8 +178,7 @@ For full details (all flags, API endpoints), see [CLI.md](./CLI.md).
 
 ## License
 
-**Free for personal & commercial use (including production and hosting/SaaS).**
-**Standalone redistribution** or modified binaries are **not allowed**.  
+Free for personal & commercial use (including production and hosting/SaaS). Standalone redistribution or modified binaries are not allowed.  
 Full terms: see [LICENSE.md](./LICENSE.md).
 
 ## Contact
