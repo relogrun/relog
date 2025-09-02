@@ -100,7 +100,9 @@ cd .\relog
 ## Run via Docker (read-only sandbox)
 
 Don’t want to run a local binary? Use a locked-down Linux container.
-Requires Docker (works on macOS, Linux, and Windows with Docker Desktop).
+
+<details>
+<summary>Run via Docker (read-only sandbox)</summary>
 
 ### macOS / Linux
 
@@ -136,6 +138,8 @@ docker run --rm --platform=linux/amd64 `
 > - The command expects you extracted the **Linux** archive into the current directory, so `relog-cli` and `samples/` are present under `./`.
 > - `--platform=linux/amd64` makes it work on Apple Silicon too.
 > - The container is read-only, has dropped capabilities, no network, a tmpfs `/tmp`, and (on macOS/Linux) runs as your user via `-u`.
+
+</details>
 
 ---
 
