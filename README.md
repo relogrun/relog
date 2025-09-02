@@ -102,7 +102,7 @@ cd .\relog
 Don’t want to run a local binary? Use a locked-down Linux container.
 
 <details>
-<summary>Run via Docker (read-only sandbox)</summary>
+<summary>Details</summary>
 
 ### macOS / Linux
 
