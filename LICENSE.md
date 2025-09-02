@@ -1,12 +1,14 @@
-# Relog Binary License (Proprietary)
+# Relog Binary License (Proprietary — Free for Personal & Commercial Use, with Limited Bundling)
 
-License Version: 1.1 — Effective: 2025-08-31
+License Version: 1.3 — Effective: 2025-09-02
 Applies to: Relog binary v0.x.x
 
 Copyright 2025 RelogRun.
 All rights reserved.
 
-This copy of the License governs the specific build with which it is distributed.
+This Software is free to use — **including commercial and production use** by individuals and organizations — subject to the terms below. Redistribution is permitted only as **unmodified bundling**; see §3. This License governs the specific build with which it is distributed.
+
+---
 
 ## 1. Definitions
 
@@ -14,35 +16,42 @@ This copy of the License governs the specific build with which it is distributed
 * **“Licensor”** means RelogRun.
 * **“You”** means the individual or legal entity that downloads, installs, or uses the Software. If You act on behalf of an entity, You represent that You are authorized to bind that entity.
 
-## 2. License Grant (Use Allowed)
+## 2. License Grant (Free Use)
 
-Subject to this License, Licensor grants You a non-exclusive, non-transferable, worldwide, royalty-free license to **install and use** the Software **in binary form** for **any purpose**, including **commercial use**, for **Your internal purposes**.
+Subject to this License, Licensor grants You a non-exclusive, non-transferable, worldwide, royalty-free license to **install and use** the Software **in object-code form** for **any purpose**, including **commercial and production use** within Your organization.
 
-**External Service Use (Hosting/SaaS permitted).**
-You may also use the Software to provide services to third parties (including hosted services/SaaS, managed services, consulting), **provided that** You **do not distribute** the Software itself to any third party (including by making downloads available or handing out copies) and You remain responsible for Your users’ compliance with this License.
+No rights to source code are granted. The Software is licensed, not sold.
 
-## 3. Restrictions (No Redistribution / No Resale)
+## 3. Limited Redistribution (Bundling Only)
 
-You shall **not** (and shall not permit any third party to):
+**3.1 What is allowed.** You may **copy and redistribute the unmodified Software** as part of (or bundled with) **Your own products or installers**, provided that:
 
-1. **Distribute, publish, resell, sublicense, rent, lease, lend,** or otherwise make the **Software binary** available to any third party, including via marketplaces or app stores.
-2. **Modify**, translate, adapt, or create **derivative works** of the Software.
-3. **Reverse engineer**, decompile, or disassemble the Software, except to the limited extent expressly permitted by applicable law notwithstanding this restriction.
-4. Remove or alter any proprietary notices or marks on/in the Software.
+(a) You do **not** charge a separate fee for the Software itself;
+(b) You include this License (pass-through) and preserve all proprietary notices;
+(c) You do **not** grant any sublicense for the Software (end users receive their license directly from Licensor via this text);
+(d) You do **not** modify, patch, wrap, or obfuscate the Software; and
+(e) You distribute integrity information (e.g., signature or checksum) if provided.
 
-## 4. Trademarks & No Misrepresentation
+**3.2 What is not allowed.** Except for the limited bundling above, You may not publish, resell, rent, lease, lend, or otherwise make the Software available as a standalone download or product.
 
-Nothing in this License grants any rights to use Licensor’s trade names, trademarks, service marks, logos, or domain names. You must not represent that Your services are affiliated with or endorsed by Licensor unless expressly agreed in writing.
+## 4. Hosting / SaaS (Permitted)
 
-## 5. Copies; Delivery; No Source Code
+You may operate the Software to provide services to third parties (including hosted/managed services and SaaS). You remain responsible for Your users’ compliance with this License. This section does not grant any right to redistribute standalone copies (see §3).
 
-The Software is licensed, not sold. No rights to source code are granted. You may make a reasonable number of **backup copies** for disaster recovery, which remain subject to this License and must not be distributed.
+## 5. Restrictions
 
-## 6. Ownership
+You shall not (and shall not permit any third party to):
 
-Licensor retains all right, title, and interest in and to the Software and all associated intellectual property rights. No rights are granted by implication or estoppel.
+1. **Modify**, translate, adapt, or create **derivative works** of the Software;
+2. **Reverse engineer**, decompile, or disassemble the Software, except to the limited extent expressly permitted by applicable law notwithstanding this restriction;
+3. Remove or alter any proprietary notices or marks on/in the Software;
+4. Circumvent access controls, license checks, feature gates, or activation mechanisms.
 
-## 7. Outputs and Your Data
+## 6. Trademarks & No Misrepresentation
+
+Nothing in this License grants any rights to use Licensor’s trade names, trademarks, service marks, logos, or domain names. You must not represent that Your products or services are affiliated with or endorsed by Licensor unless expressly agreed in writing. Preserve `--version` / `--about` attribution if present.
+
+## 7. Data & Outputs
 
 You retain all rights to Your inputs and to the **outputs** produced by the Software, provided such outputs do not include any substantial portion of the Software itself. You are responsible for Your data and compliance with applicable law.
 
@@ -54,7 +63,7 @@ If You provide suggestions, ideas, or feedback, Licensor may use them **without 
 
 (a) **Updates/New Versions.** Licensor may, from time to time, provide updates, patches, or new versions of the Software.
 (b) **New or Additional Terms.** Updates or new versions may be offered under **new or additional terms**, which may include **fees, subscriptions, usage limits, or feature-based licensing**. To **install or use** any such update or new version, You must accept the terms that accompany it.
-(c) **Choice.** If You do not accept the terms for an update/new version, You may **continue to use** any version You already obtained **under the terms that came with that version**, subject to this License.
+(c) **Choice.** If You do not accept such terms, You may **continue to use** any version You already obtained **under the terms that came with that version**, subject to this License.
 (d) **Feature Changes.** Licensor may add, change, or remove features at any time and has no obligation to maintain any particular feature, compatibility, or to provide updates or support for free.
 (e) **Activation/Access Controls.** Certain features or editions may require activation, a license key, or account-based access. You agree not to circumvent any access controls.
 (f) **No Retroactive Effect.** Changes to pricing or license terms do **not** apply **retroactively** to copies already licensed to You unless You choose to install or use an update/new version governed by those changed terms.
@@ -69,7 +78,7 @@ THE SOFTWARE IS PROVIDED **“AS IS”** AND **“AS AVAILABLE”**, WITHOUT WAR
 
 ## 12. Limitation of Liability
 
-TO THE MAXIMUM EXTENT PERMITTED BY LAW, LICENSOR SHALL NOT BE LIABLE FOR ANY **INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES**, OR FOR ANY **LOSS OF PROFITS, REVENUE, DATA, OR GOODWILL**, EVEN IF ADVISED OF THE POSSIBILITY. LICENSOR’S TOTAL LIABILITY FOR ALL CLAIMS RELATING TO THE SOFTWARE SHALL NOT EXCEED **US$100** OR THE AMOUNT YOU PAID (IF ANY) FOR THE SOFTWARE IN THE 12 MONTHS BEFORE THE CLAIM, WHICHEVER IS GREATER.
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, LICENSOR SHALL NOT BE LIABLE FOR ANY **INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES**, OR FOR ANY **LOSS OF PROFITS, REVENUE, DATA, OR GOODWILL**, EVEN IF ADVISED OF THE POSSIBILITY. LICENSOR’S TOTAL LIABILITY FOR ALL CLAIMS RELATING TO THE SOFTWARE SHALL NOT EXCEED **US\$100** OR THE AMOUNT YOU PAID (IF ANY) FOR THE SOFTWARE IN THE 12 MONTHS BEFORE THE CLAIM, WHICHEVER IS GREATER.
 
 ## 13. Compliance; Export
 
@@ -83,13 +92,9 @@ You must comply with all applicable laws, including export control and sanctions
 
 This License is governed by the laws of **France**, without regard to conflict-of-laws rules. If You are a consumer resident in the EU/EEA/UK, You also benefit from any mandatory protections of Your local law and may bring proceedings in the courts of Your domicile. Otherwise, the courts of **Paris, France** shall have exclusive jurisdiction.
 
-## 16. Entire Agreement
+## 16. Entire Agreement; Language
 
-This License constitutes the entire agreement between the parties regarding the Software and supersedes all prior or contemporaneous understandings on this subject. If any provision is held unenforceable, it shall be enforced to the maximum extent permissible, and the remainder will remain in full force.
-
-## 17. Language
-
-This License is provided in **English**. Any translation is for convenience only; the English version controls in the event of a conflict.
+This License constitutes the entire agreement between the parties regarding the Software and supersedes all prior or contemporaneous understandings on this subject. If any provision is held unenforceable, it shall be enforced to the maximum extent permissible, and the remainder will remain in full force. This License is provided in **English**. Any translation is for convenience only; the English version controls in the event of a conflict.
 
 ---
 
@@ -99,7 +104,7 @@ This product includes third-party components licensed under permissive open-sour
 
 ### MIT License
 
-Copyright (c) <YEAR> <OWNER>
+Copyright (c) \<YEAR> \<OWNER>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the “Software”), to deal
@@ -119,12 +124,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
-
 ### Apache License, Version 2.0
 
-                                 Apache License
-                           Version 2.0, January 2004
-                        http://www.apache.org/licenses/
+```
+                             Apache License
+                       Version 2.0, January 2004
+                    http://www.apache.org/licenses/
+```
 
 TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
 
@@ -213,30 +219,30 @@ TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
    in Source or Object form, provided that You meet the following conditions:
 
    (a) You must give any other recipients of the Work or Derivative Works a
-       copy of this License; and
+   copy of this License; and
 
    (b) You must cause any modified files to carry prominent notices stating
-       that You changed the files; and
+   that You changed the files; and
 
    (c) You must retain, in the Source form of any Derivative Works that You
-       distribute, all copyright, patent, trademark, and attribution notices
-       from the Source form of the Work, excluding those notices that do not
-       pertain to any part of the Derivative Works; and
+   distribute, all copyright, patent, trademark, and attribution notices
+   from the Source form of the Work, excluding those notices that do not
+   pertain to any part of the Derivative Works; and
 
    (d) If the Work includes a "NOTICE" text file as part of its distribution,
-       then any Derivative Works that You distribute must include a readable
-       copy of the attribution notices contained within such NOTICE file,
-       excluding those notices that do not pertain to any part of the
-       Derivative Works, in at least one of the following places: within a
-       NOTICE text file distributed as part of the Derivative Works; within
-       the Source form or documentation, if provided along with the Derivative
-       Works; or, within a display generated by the Derivative Works, if and
-       wherever such third-party notices normally appear. The contents of the
-       NOTICE file are for informational purposes only and do not modify the
-       License. You may add Your own attribution notices within Derivative
-       Works that You distribute, alongside or as an addendum to the NOTICE
-       text from the Work, provided that such additional attribution notices
-       cannot be construed as modifying the License.
+   then any Derivative Works that You distribute must include a readable
+   copy of the attribution notices contained within such NOTICE file,
+   excluding those notices that do not pertain to any part of the
+   Derivative Works, in at least one of the following places: within a
+   NOTICE text file distributed as part of the Derivative Works; within
+   the Source form or documentation, if provided along with the Derivative
+   Works; or, within a display generated by the Derivative Works, if and
+   wherever such third-party notices normally appear. The contents of the
+   NOTICE file are for informational purposes only and do not modify the
+   License. You may add Your own attribution notices within Derivative
+   Works that You distribute, alongside or as an addendum to the NOTICE
+   text from the Work, provided that such additional attribution notices
+   cannot be construed as modifying the License.
 
    You may add Your own copyright statement to Your modifications and may
    provide additional or different license terms and conditions for use,
@@ -291,25 +297,26 @@ END OF TERMS AND CONDITIONS
 
 APPENDIX: How to apply the Apache License to your work.
 
-   To apply the Apache License to your work, attach the following boilerplate
-   notice, with the fields enclosed by brackets "[]" replaced with your own
-   identifying information. (Don't include the brackets!)  The text should be
-   enclosed in the appropriate comment syntax for the file format. We also
-   recommend that a file or class name and description of purpose be included
-   on the same "printed page" as the copyright notice for easier identification
-   within third-party archives.
+To apply the Apache License to your work, attach the following boilerplate
+notice, with the fields enclosed by brackets "\[]" replaced with your own
+identifying information. (Don't include the brackets!) The text should be
+enclosed in the appropriate comment syntax for the file format. We also
+recommend that a file or class name and description of purpose be included
+on the same "printed page" as the copyright notice for easier identification
+within third-party archives.
 
-   Copyright [yyyy] [name of copyright owner]
+Copyright \[yyyy] \[name of copyright owner]
 
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+```
+   http://www.apache.org/licenses/LICENSE-2.0
+```
 
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
-
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.

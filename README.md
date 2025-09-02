@@ -178,7 +178,10 @@ For full details (all flags, API endpoints), see [CLI.md](./CLI.md).
 
 ## License
 
-You may run the binary for any purpose, including commercial, and even host services on top of it — **but do not redistribute the binary**. Details inside the [license](./LICENSE.md).
+**Free for personal & commercial use (including production and hosting/SaaS).**
+You may also **bundle and redistribute the unmodified binary or Docker image** as part of your own product/installer with this license attached (pass-through). 
+**Standalone redistribution** or modified binaries are **not allowed**.  
+Full terms: see [LICENSE.md](./LICENSE.md).
 
 ## Contact
 
