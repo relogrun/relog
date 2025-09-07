@@ -4,15 +4,13 @@
 
 No persistence, no files, no sockets — just load a .rl and run it locally.
 
-## Downloads
+## Quick Start
 
 Grab the archive for your OS from [latest release](https://github.com/relogrun/relog/releases/latest):
 
 - **macOS (Universal)** — `relog-macos-universal.zip`
 - **Linux x86_64 (musl)** — `relog-linux-x86_64.tar.gz`
 - **Windows x86_64 (gnu)** — `relog-windows-x86_64.zip`
-
-## Quick Start
 
 ### macOS
 
