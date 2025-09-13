@@ -37,7 +37,7 @@ chmod +x ./relog-cli
 ./relog-cli ./samples/pure_net/buffer_backpressure.rl --log debug --delay 500
 ```
 
-For the full command reference (modes, flags, REST/WS API), see [CLI.md](./CLI.md).
+For the full command reference (modes, flags, REST/WS API), see [docs/CLI.md](./docs/CLI.md).
 
 ### Windows (x86_64)
 
