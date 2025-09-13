@@ -69,43 +69,6 @@ init {
 }
 ```
 
-// Built-in sorts: any | sym | int | bool
-// Parametric types: head<T1, T2, ...>
-
-// Stores (typed)
-store produced: item<sym>
-store free: sym
-store buf: item<sym>
-store done: pair<sym, sym>
-
-// Algebra (optional)
-algebra {
-  operator set { assoc, comm, id(_), rest(let r) };
-  rule member(let x, set(let x, let r)) => true;
-  rule member(let _, let _) => false;
-}
-
-// Transitions (type-checked)
-transition push {
-  in  produced(item(let x))
-  in  free(slot)
-  guard member(let x, set(hello, world))
-  out buf(item(let x))
-}
-
-transition pop_pair {
-  in  buf(item(let y)) * 2
-  out done(pair(let y, let y))
-  out free(slot) * 2
-}
-
-// Init (type-safe)
-init {
-  produced item(hello)
-  produced item(world) * 2
-  free slot * 2
-}
-
 ### Typed stores
 
 ```relog
