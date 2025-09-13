@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.4.0] — 2025-09-13
+
+### Added
+
+* **Types (optional)**
+
+  * Store type annotations: `store buf: item<sym>`, `store done: pair<int,int>`.
+  * Base types: `any | sym | int | bool`; type constructors: `Ctor<T1,...,Tn>`.
+  * Static checks for `init`, `in`, `out` terms.
+
+* **Algebra DSL (optional)**
+
+  * New `algebra { ... }` block with **operators** (`operator f { assoc, comm, id(term), rest(let r) }`) and **rewrite rules** (`rule lhs => rhs;`).
+  * **Configs:** `max_steps N` and `ac_branch_budget N`.
+
+* **Transition guards**
+
+  * `guard <term>` inside a transition. 
+
 ## [0.3.0] — 2025-08-31
 
 ### Added
