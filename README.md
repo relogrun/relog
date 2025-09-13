@@ -120,7 +120,7 @@ Help:
 ./relog-cli serve --help
 ```
 
-For full details (all flags, API endpoints), see [CLI.md](./CLI.md).
+For full details (all flags, API endpoints), see [docs/CLI.md](./docs/CLI.md).
 
 ---
 
@@ -135,14 +135,20 @@ store free
 store buf
 store done
 
-// Move one produced item into the buffer, consuming one slot.
+// (optional) algebra: predicate allowed/1
+algebra {
+  rule allowed(hello) => true;
+  rule allowed(let _) => false;
+}
+
+// Move one produced item into the buffer only if guard passes.
 transition push {
   in  produced(item(let x))
   in  free(slot)
   out buf(item(let x))
+  guard allowed(let x)        // guard must normalize to `true`
 }
 
-// Take TWO equal items from the buffer at once, return two slots.
 transition pop_pair {
   in  buf(item(let y)) * 2
   out done(pair(let y, let y))
@@ -151,7 +157,7 @@ transition pop_pair {
 
 init {
   produced item(hello)
-  produced item(world) * 2 // enables pop_pair once for "world"
+  produced item(world) * 2
   free slot * 2
 }
 ```
@@ -160,9 +166,10 @@ init {
 - **Literals:** identifiers (`hello`), strings (`"hello world"`), numbers (`123`).
 - **Applications:** n-ary terms, e.g. `foo(bar, baz)`.
 - **Multiplicity:** `* N`. Inputs need **N distinct** matching tokens. Examples: `in buffer(let x) * 3`, `init { free slot * 3 }`.
-- **Configs**: set directly in the DSL (net/runtime/store/transition).
+- **Guards:** `guard <term>` after input matching, the term is algebra-normalized; the transition fires only if it becomes `true` (multiple guards allowed).
+- **Configs**: set directly in the DSL.
 
-Full DSL reference: see [DSL.md](./DSL.md)
+Full DSL reference: see [docs/DSL.md](./docs/DSL.md)
 
 Samples: see [samples/](./samples)
 
@@ -176,8 +183,7 @@ Samples: see [samples/](./samples)
 
 ## License
 
-**Free for personal & commercial use** (including production and hosting/SaaS). Standalone redistribution or modified binaries are not allowed.  
-Full terms: see [LICENSE.md](./LICENSE.md).
+**Free for Non-Commercial Use. Commercial use requires a license — see [LICENSE.md](./LICENSE.md).**
 
 ## Contact
 
