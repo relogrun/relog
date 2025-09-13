@@ -175,12 +175,6 @@ Samples: see [samples/](./samples)
 
 ---
 
-## Troubleshooting
-
-- **Permission denied** → `chmod +x ./relog-cli` (macOS/Linux)
-- **Quarantine (macOS)** → `xattr -dr com.apple.quarantine ./relog-cli`
-- **Weird path issues on Windows** → wrap paths with spaces in quotes
-
 ## License
 
 Free for Non-Commercial Use. Commercial use requires a license — see [LICENSE.md](./LICENSE.md).
