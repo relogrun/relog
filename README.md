@@ -183,7 +183,7 @@ Samples: see [samples/](./samples)
 
 ## License
 
-**Free for Non-Commercial Use. Commercial use requires a license — see [LICENSE.md](./LICENSE.md).**
+Free for Non-Commercial Use. Commercial use requires a license — see [LICENSE.md](./LICENSE.md).
 
 ## Contact
 
