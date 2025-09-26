@@ -18,7 +18,7 @@
 | `<path-to-file.rl>` | DSL file to execute (must be a file)       | —                     |
 | `--log <level>`     | `off`\|`error`\|`warn`\|`info`\|`debug`    | `info`                |
 | `--mode <mode>`     | Override runtime: `natural`\|`reactive`    | from DSL or `natural` |
-| `--max-ticks <N>`   | Stop after N ticks                         | from DSL or unlimited |
+| `--max_ticks <N>`   | Stop after N ticks                         | from DSL or unlimited |
 | `--delay <MS>`      | Inter-step delay in **reactive** mode (ms) | from DSL or `0`       |
 
 **Notes:** CLI flags override the corresponding values defined in the `.rl` file (except `--log`, which is CLI-only).
@@ -27,7 +27,7 @@
 **Examples**
 
 ```
-relog-cli run ./samples/hello.rl --log debug --max-ticks 1000
+relog-cli run ./samples/hello.rl --log debug --max_ticks 1000
 ```
 
 ---

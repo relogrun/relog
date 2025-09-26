@@ -135,18 +135,12 @@ store free
 store buf
 store done
 
-// (optional) algebra: predicate allowed/1
-algebra {
-  rule allowed(hello) => true;
-  rule allowed(let _) => false;
-}
-
 // Move one produced item into the buffer only if guard passes.
 transition push {
   in  produced(item(let x))
   in  free(slot)
   out buf(item(let x))
-  guard allowed(let x)        // guard must normalize to `true`
+  guard allowed(let x)
 }
 
 transition pop_pair {
@@ -178,7 +172,3 @@ Samples: see [samples/](./samples)
 ## License
 
 Free for Non-Commercial Use. Commercial use requires a license — see [LICENSE.md](./LICENSE.md).
-
-## Contact
-
-**[q@relog.run](mailto:q@relog.run)**

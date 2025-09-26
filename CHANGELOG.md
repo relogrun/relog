@@ -1,23 +1,33 @@
 # Changelog
 
+## [0.5.0] — 2025-09-26
+
+### Changed
+
+- **Runtime semantics:** pivot to a **Markov** scheduler. Each tick fires **exactly one** enabled instance. Deterministic tie-break: higher `priority` → transition `name` (asc) → `instance_id` (asc) → `id` (asc).
+
+### Breaking
+
+- **Removed DSL/runtime directives:** `forward` and `multi_firing`.
+
 ## [0.4.0] — 2025-09-13
 
 ### Added
 
-* **Types (optional)**
+- **Types (optional)**
 
-  * Store type annotations: `store buf: item<sym>`, `store done: pair<int,int>`.
-  * Base types: `any | sym | int | bool`; type constructors: `Ctor<T1,...,Tn>`.
-  * Static checks for `init`, `in`, `out` terms.
+  - Store type annotations: `store buf: item<sym>`, `store done: pair<int,int>`.
+  - Base types: `any | sym | int | bool`; type constructors: `Ctor<T1,...,Tn>`.
+  - Static checks for `init`, `in`, `out` terms.
 
-* **Algebra DSL (optional)**
+- **Algebra DSL (optional)**
 
-  * New `algebra { ... }` block with **operators** (`operator f { assoc, comm, id(term), rest(let r) }`) and **rewrite rules** (`rule lhs => rhs;`).
-  * **Configs:** `max_steps N` and `ac_branch_budget N`.
+  - New `algebra { ... }` block with **operators** (`operator f { assoc, comm, id(term), rest(let r) }`) and **rewrite rules** (`rule lhs => rhs;`).
+  - **Configs:** `max_steps N` and `ac_branch_budget N`.
 
-* **Transition guards**
+- **Transition guards**
 
-  * `guard <term>` inside a transition. 
+  - `guard <term>` inside a transition.
 
 ## [0.3.0] — 2025-08-31
 
@@ -34,7 +44,7 @@
 - **CLI split into subcommands**:
 
   - `run` — execute a single `.rl` locally:
-    `relog-cli run <file.rl> [--log <level>] [--runtime {natural|reactive}] [--max-ticks N] [--delay MS]`
+    `relog-cli run <file.rl> [--log <level>] [--runtime {natural|reactive}] [--max_ticks N] [--delay MS]`
   - `serve` — start the API server for a base directory or a file inside it:
     `relog-cli serve <base-path-or-file> [--port P] [--autostart rel-file.rl] [--log <level>]`
 
@@ -50,7 +60,7 @@
 - Net/runtime config in DSL: `forward first_fit | max_cardinality(N)`, `multi_firing unlimited | limited(N) | disabled`, `runtime natural | reactive`, `max_ticks N`, `delay N`.
 - Transition config: `grounding strict | skip | default("v")`, `priority N`.
 - Store config: `capacity unbounded | N` with capacity checks.
-- CLI flags: `--runtime {natural|reactive}`, `--max-ticks N`.
+- CLI flags: `--runtime {natural|reactive}`, `--max_ticks N`.
 
 ### Optimizations
 

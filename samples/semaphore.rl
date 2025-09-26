@@ -7,8 +7,8 @@ store tasks
 store completed
 
 transition work {
-    in  workers(worker) * 2
-    in  tasks(let task)
+    in workers(worker) * 2
+    in tasks(let task)
     out completed(let task)
     out workers(worker) * 2
 }

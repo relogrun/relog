@@ -9,4 +9,3 @@ transition copy {
 init {
     input hi
 }
-

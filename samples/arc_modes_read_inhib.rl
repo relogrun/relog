@@ -5,23 +5,20 @@
 // `spawn_when_idle` uses inhib on `running(_)`.
 // Result: `running(task1)` starts; `task2` stays queued while something runs.
 
-
-forward first_fit
-
 store lock
 store queue
 store jobs
 store running
 
 transition start_when_locked {
-  in  jobs(let x)
-  in  lock(token) { mode read }
+  in jobs(let x)
+  in lock(token) { mode read }
   out running(let x)
 }
 
 transition spawn_when_idle {
-  in  queue(let x)
-  in  running(let _) { mode inhib }
+  in queue(let x)
+  in running(let _) { mode inhib }
   out jobs(let x)
 }
 

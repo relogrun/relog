@@ -8,13 +8,13 @@ store produced
 store consumed
 
 transition produce {
-    in  produced(item(let x))
-    in  free_slots(slot)
+    in produced(item(let x))
+    in free_slots(slot)
     out buf(item(let x))
 }
 
 transition consume {
-    in  buf(item(let y))
+    in buf(item(let y))
     out consumed(item(let y))
     out free_slots(slot)
 }

@@ -113,14 +113,11 @@ init {
 ### Configs
 
 ```relog
-// Net / runtime configs
-forward first_fit          // first_fit | max_cardinality(N); default: first_fit
-multi_firing unlimited     // unlimited | limited(N) | disabled; default: unlimited
+// Runtime config
 runtime natural            // natural | reactive; default: natural
 max_ticks 1000             // N; default: none
 delay 0                    // N(ms); default: 0
 
-// Algebra configs 
 algebra {
   max_steps 10000          // default: 10000
   ac_branch_budget 64      // default: 64
@@ -130,7 +127,6 @@ algebra {
 
 // Stores
 store produced {
-  // Store configs
   capacity unbounded       // unbounded | N; default: unbounded
 }
 store free
@@ -140,7 +136,6 @@ store buf {
 
 // Transitions
 transition push {
-  // Transition configs
   grounding strict         // strict | skip | default("v"); default: strict
   priority 1               // N; default: 0
 
