@@ -161,7 +161,6 @@ init {
 - **Applications:** n-ary terms, e.g. `foo(bar, baz)`.
 - **Multiplicity:** `* N`. Inputs need **N distinct** matching tokens. Examples: `in buffer(let x) * 3`, `init { free slot * 3 }`.
 - **Guards:** `guard <term>` after input matching, the term is algebra-normalized; the transition fires only if it becomes `true` (multiple guards allowed).
-- **Configs**: set directly in the DSL.
 
 Full DSL reference: see [docs/DSL.md](./docs/DSL.md)
 
