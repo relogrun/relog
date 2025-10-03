@@ -38,7 +38,7 @@
   Ground-only; args are available as `args` (array); returns `int | bool | string`.
   - Same error semantics as above.
 
-Full compute reference: [docs/COMPUTE.md](./COMPUTE.md)
+Full compute reference: [COMPUTE.md](./COMPUTE.md)
 
 ## Samples
 

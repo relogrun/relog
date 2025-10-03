@@ -43,7 +43,7 @@ guard #compute(gt(#compute(add(2, 5)), 6))
 out res(val(#compute(sub(10, #compute(add(4, 3))))))
 ```
 
-**Sample**: see [samples/compute.rl](../samples/compute.rl)
+**Sample**: [samples/compute.rl](../samples/compute.rl)
 
 ---
 
@@ -70,7 +70,7 @@ guard #rhai("let s = args[0]; s.len() >= 3", "alex")
 out   out(val(#rhai("let n = args[0]; format!(\"user:{}\", n)", "ann")))
 ```
 
-**Sample**: see [samples/rhai.rl](../samples/rhai.rl)
+**Sample**: [samples/rhai.rl](../samples/rhai.rl)
 
 ---
 
