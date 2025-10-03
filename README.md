@@ -20,7 +20,7 @@ cd relog-*
 chmod +x ./relog-cli
 
 # run a sample
-./relog-cli ./samples/pure_net/buffer_backpressure.rl --log debug --delay 500
+./relog-cli ./samples/buffer_backpressure.rl --log debug --delay 500
 ```
 
 > If macOS shows a quarantine warning:
@@ -34,7 +34,7 @@ cd relog-*
 chmod +x ./relog-cli
 
 # run a sample
-./relog-cli ./samples/pure_net/buffer_backpressure.rl --log debug --delay 500
+./relog-cli ./samples/buffer_backpressure.rl --log debug --delay 500
 ```
 
 For the full command reference (modes, flags, REST/WS API), see [docs/CLI.md](./docs/CLI.md).
@@ -46,7 +46,7 @@ Expand-Archive .\relog-windows-x86_64.zip -DestinationPath .\relog
 cd .\relog
 
 # run a sample
-.\relog-cli.exe .\samples\pure_net\buffer_backpressure.rl --log debug --delay 500
+.\relog-cli.exe .\samples\buffer_backpressure.rl --log debug --delay 500
 ```
 
 > If SmartScreen warns about an unknown publisher, choose “More info” → “Run anyway”.
@@ -70,7 +70,7 @@ docker run --rm --platform=linux/amd64 \
   -w /app \
   -u "$(id -u):$(id -g)" \
   debian:stable-slim \
-  /app/relog-cli /app/samples/pure_net/buffer_backpressure.rl --log debug --delay 500
+  /app/relog-cli /app/samples/buffer_backpressure.rl --log debug --delay 500
 ```
 
 ### Windows (PowerShell)
@@ -84,7 +84,7 @@ docker run --rm --platform=linux/amd64 `
   -v "${PWD}:/app:ro" `
   -w /app `
   debian:stable-slim `
-  /app/relog-cli /app/samples/pure_net/buffer_backpressure.rl --log debug --delay 500
+  /app/relog-cli /app/samples/buffer_backpressure.rl --log debug --delay 500
 ```
 
 > Notes:
@@ -104,13 +104,13 @@ There are two modes:
 **Direct mode (`run`)** — execute a single `.rl` locally.
 
 ```bash
-./relog-cli run ./samples/pure_net/buffer_backpressure.rl --log debug --delay 500
+./relog-cli run ./samples/buffer_backpressure.rl --log debug --delay 500
 ```
 
 **Server mode (`serve`)** — start an HTTP + WebSocket API for remote control (pass a base directory or a file inside it).
 
 ```bash
-./relog-cli serve ./samples/pure_net --port 9000 --log debug
+./relog-cli serve ./samples --port 9000 --log debug
 ```
 
 Help:
@@ -126,7 +126,7 @@ For full details (all flags, API endpoints), see [docs/CLI.md](./docs/CLI.md).
 
 ## DSL (tiny overview)
 
-A program declares **stores**, **transitions** (with input/output arcs), and **initial tokens**:
+A program declares **stores**, **transitions** and **initial tokens**:
 
 ```relog
 // Stores
@@ -155,12 +155,6 @@ init {
   free slot * 2
 }
 ```
-
-- **Variables:** `let x`. Reusing a var enforces equality, e.g. `pair(let x, let x)`.
-- **Literals:** identifiers (`hello`), strings (`"hello world"`), numbers (`123`).
-- **Applications:** n-ary terms, e.g. `foo(bar, baz)`.
-- **Multiplicity:** `* N`. Inputs need **N distinct** matching tokens. Examples: `in buffer(let x) * 3`, `init { free slot * 3 }`.
-- **Guards:** `guard <term>` after input matching, the term is algebra-normalized; the transition fires only if it becomes `true` (multiple guards allowed).
 
 Full DSL reference: see [docs/DSL.md](./docs/DSL.md)
 

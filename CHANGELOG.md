@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.6.0] — 2025-10-03
+
+### Added
+
+- **Compute directives**
+  - `#compute(...)`: pure built-ins for `int | bool | string` (arithmetic, comparisons, booleans, string ops like `concat`, `len`, `clamp`, `between`).
+  - `#rhai("...script...", args...)`: inline Rhai script in a sandboxed engine, arguments exposed as `args` (array), returns `int | bool | string`.
+
 ## [0.5.0] — 2025-09-26
 
 ### Changed

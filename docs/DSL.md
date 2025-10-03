@@ -1,5 +1,47 @@
 # Relog DSL
 
+## Syntax
+
+### Terms
+
+- **Variables:** `let x`. Reusing a var enforces equality, e.g. `pair(let x, let x)`.
+- **Literals:** identifiers (`hello`), strings (`"hello world"`), numbers (`123`).
+  - Strings use double quotes and standard escapes: `\"`, `\\`, `\n`, `\t`, `\u1234`, `\u{1F600}`.
+- **Applications:** n-ary terms, e.g. `foo(bar, baz)`.
+- **Multiplicity:** `* N`. Inputs need **N distinct** matching tokens. Examples:
+  - `in buffer(let x) * 3`
+  - `init { free slot * 3 }`
+- **Guards:** `guard <term>` after input matching; the term is algebra-normalized.
+  The transition fires only if it becomes `true` (multiple guards allowed).
+
+### Algebra & Types (experimental)
+
+> ⚠️ **Experimental**: surface and semantics may change.
+
+- **Algebra** is an optional rewrite system with operator properties:
+  - `operator f { assoc, comm, id(_), rest(let r) }`
+    - Canonicalization: flattens `assoc`, drops `id(_)`, sorts `comm` args.
+    - Rules: `rule lhs => rhs`. Normalization runs until fixpoint or `max_steps`.
+    - AC matching uses a backtracking budget `ac_branch_budget`; if exhausted, the rule doesn’t apply.
+  - **All stored tokens are normalized**. Changing algebra re-normalizes the current marking.
+- **Types** (optional) annotate stores: `any | sym | int | bool | head<T...>`.
+  - `sym` covers both identifiers and strings; numbers are `int`, `true/false` are `bool`.
+  - Inputs check compatibility and bind var types; outputs are checked too.
+  - With `grounding strict`, outputs may not introduce unbound vars (except `_`).
+
+### Compute directives
+
+- **`#compute(...)`** — safe built-ins (math, comparisons, booleans, strings).  
+  Ground-only; returns `int | bool | string`.
+  - Errors in **guards** → guard = `false`. Errors in **outputs** → step fails.
+- **`#rhai("...script...", args...)`** — inline Rhai script in a sandbox.  
+  Ground-only; args are available as `args` (array); returns `int | bool | string`.
+  - Same error semantics as above.
+
+Full compute reference: [docs/COMPUTE.md](./docs/COMPUTE.md)
+
+## Samples
+
 ### Minimal net (stores + transitions)
 
 ```relog
@@ -107,6 +149,24 @@ init {
   produced item(hello)
   produced item(world) * 2
   free slot * 2
+}
+```
+
+### Compute / Rhai
+
+```relog
+store names
+store out
+
+transition greet_long {
+  in  names(val(let n))
+  guard #rhai("let s = args[0]; s.len() >= 3", let n)
+  out  out(val(#compute(concat(let n, "!"))))
+}
+
+init {
+  names val("ann")
+  names val("bo")
 }
 ```
 
