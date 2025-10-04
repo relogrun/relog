@@ -5,7 +5,7 @@ Inline evaluation for guards/outputs.
 - **Directives:** `#compute(...)` (built-ins), `#rhai("...script...", args...)` (sandboxed Rhai).
 - **Where:** inside `guard <term>` and output terms.
 - **Ground-only:** all args must be constants after substitution.
-- **Result type:** one constant: `int | bool | string (typed as sym)`.
+- **Result type:** one constant: `int | bool | string`.
 
 ## Semantics
 
