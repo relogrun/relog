@@ -32,10 +32,10 @@
 ### Compute directives
 
 - **`#compute(...)`** — safe built-ins (math, comparisons, booleans, strings).  
-  Ground-only; returns `int | bool | string`.
+  Ground-only; returns `int | bool | string (as sym)`.
   - Errors in **guards** → guard = `false`. Errors in **outputs** → step fails.
 - **`#rhai("...script...", args...)`** — inline Rhai script in a sandbox.  
-  Ground-only; args are available as `args` (array); returns `int | bool | string`.
+  Ground-only; args are available as `args` (array); returns `int | bool | string (as sym)`.
   - Same error semantics as above.
 
 Full compute reference: [COMPUTE.md](./COMPUTE.md)
