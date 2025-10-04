@@ -37,7 +37,7 @@ chmod +x ./relog-cli
 ./relog-cli ./samples/buffer_backpressure.rl --log debug --delay 500
 ```
 
-For the full command reference (modes, flags, REST/WS API), see [docs/CLI.md](./docs/CLI.md).
+For the full command reference (modes, flags, REST/WS API) see [docs/CLI.md](./docs/CLI.md).
 
 ### Windows (x86_64)
 
@@ -120,7 +120,7 @@ Help:
 ./relog-cli serve --help
 ```
 
-For full details (all flags, API endpoints), see [docs/CLI.md](./docs/CLI.md).
+For full details (all flags, API endpoints) see [docs/CLI.md](./docs/CLI.md).
 
 ---
 
@@ -156,12 +156,12 @@ init {
 }
 ```
 
-Full DSL reference: see [docs/DSL.md](./docs/DSL.md)
+Full DSL reference: [docs/DSL.md](./docs/DSL.md)
 
-Samples: see [samples/](./samples)
+Samples: [samples/](./samples)
 
 ---
 
 ## License
 
-Free for Non-Commercial Use. Commercial use requires a license — see [LICENSE.md](./LICENSE.md).
+Free for Non-Commercial Use. Commercial use requires a license — [LICENSE.md](./LICENSE.md).
